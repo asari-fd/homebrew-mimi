@@ -23,6 +23,6 @@ class Mimiio < Formula
   end
 
   test do
-    system "false"
+    assert_match "usage: mimiio_file", shell_output("${bin}/mimiio_file")
   end
 end
