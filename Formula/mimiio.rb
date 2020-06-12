@@ -1,14 +1,14 @@
 class Mimiio < Formula
-  desc "mimi(R) WebSocket API Service client library"
+  desc "Client library for mimi(R) WebSocket API Service"
   homepage "https://github.com/FairyDevicesRD/libmimiio"
   head "https://github.com/FairyDevicesRD/libmimiio.git"
 
-  depends_on "poco"
-  depends_on "flac"
-  depends_on "portaudio"
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+  depends_on "flac"
+  depends_on "poco"
+  depends_on "portaudio"
 
   def install
     system "autoreconf", "-ivf"
@@ -20,5 +20,9 @@ class Mimiio < Formula
                           "--prefix=#{prefix}",
                           "CXXFLAGS=-std=c++11"
     system "make", "all", "install"
+  end
+
+  test do
+    system "false"
   end
 end
