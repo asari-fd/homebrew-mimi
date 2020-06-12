@@ -10,8 +10,6 @@ class Mimiio < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
 
-  skip_clean :all
-
   def install
     system "autoreconf", "-ivf"
     # Logger#setChannel API changed since POCO 1.10
