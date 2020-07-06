@@ -12,8 +12,6 @@ class Mimiio < Formula
 
   def install
     system "autoreconf", "-ivf"
-    # Logger#setChannel API changed since POCO 1.10
-    system "sed", "-i", "", "s/pfmtChannel.get()/pfmtChannel/", "src/mimiio.cpp"
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
